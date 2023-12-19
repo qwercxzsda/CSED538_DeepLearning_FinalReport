@@ -13,7 +13,9 @@
 \usepackage{microtype}      % microtypography
 \usepackage{xcolor}         % colors
 
-
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{subfiles} % Best loaded last in the preamble
 
 
 \title{DeepLearning - Final Report}
@@ -57,16 +59,30 @@
 \end{abstract}
 
 
-% \section{Introduction}
+\section{Introduction}
+
+\subfile{subfiles/introduction.tex}
 
 
-% \section{Method}
+\section{Method}
+
+\subsection{Feature Attention}
+
+\subfile{subfiles/method_feature_attention.tex}
+
+\subsection{FDAF}
+
+\subfile{subfiles/method_fdaf.tex}
 
 
-% \section{Experiment}
+\section{Experiment}
+
+\subfile{subfiles/experiment.tex}
 
 
-% \section{Conclusion}
+\section{Conclusion}
+
+\subfile{subfiles/conclusion.tex}
 
 
 \section{General formatting instructions}
