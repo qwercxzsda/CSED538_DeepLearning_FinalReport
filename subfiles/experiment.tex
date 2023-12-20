@@ -12,33 +12,34 @@ As a result, adding feature attention achieves better performance on the LEVIR-C
 \subsection{Qualitative Result}
 \begin{figure}[h]
     \centering
-    \begin{subfigure}[b]{0.3\linewidth}
+    \begin{subfigure}[b]{0.16\linewidth}
         \includegraphics[width=\linewidth]{levir_attention_best.png}
-        \caption{LEVIR-Attention}
+        \caption{LEVIR, A}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\linewidth}
+    \begin{subfigure}[b]{0.16\linewidth}
         \includegraphics[width=\linewidth]{levir_fdaf_best.png}
-        \caption{LEVIR-FDAF}
+        \caption{LEVIR, B}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\linewidth}
+    \begin{subfigure}[b]{0.16\linewidth}
         \includegraphics[width=\linewidth]{levir_attention_fdaf_best.png}
-        \caption{LEVIR-Attention-FDAF}
+        \caption{LEVIR, A+B}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\linewidth}
+    \begin{subfigure}[b]{0.16\linewidth}
         \includegraphics[width=\linewidth]{whu_attention_best.png}
-        \caption{WHU-Attention}
+        \caption{WHU, A}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\linewidth}
+    \begin{subfigure}[b]{0.16\linewidth}
         \includegraphics[width=\linewidth]{whu_fdaf_best.png}
-        \caption{WHU-FDAF}
+        \caption{WHU, B}
     \end{subfigure}
-    \begin{subfigure}[b]{0.3\linewidth}
+    \begin{subfigure}[b]{0.16\linewidth}
         \includegraphics[width=\linewidth]{whu_attention_fdaf_best.png}
-        \caption{WHU-Attention-FDAF}
+        \caption{WHU, A+B}
     \end{subfigure}
-    \caption{Qualitative results}
+    \caption{Qualitative results. A is feature attention, B is FDAF.}
     \label{fig:qualitative_results}
 \end{figure}
+
 
 \subsection{Experimental Details}
 One NVIDIA A6000 Ada Generation GPU was allocated and used for each experiment. As for the dataset, we cropped at 256x256 for both LEVIR-CD and WHU-CD, like baseline. In LEVIR, we used 7,120 train data and 2,048 validation data, and in WHU-CD, we used 5,952 train data and 1,488 validation data. The batch size was set to 8 during training. We optimize the networks with the BCE loss using the AdamW optimizer, while keeping diffusion model freezed. We use the initial learning rate 1e-5,  decaying it linearly to zero over end of epochs. In the case of LEVIR, our model was learned for 120 epoch and in the case of WHU, 80 epoch, and the best validation score was recorded every epoch. 
