@@ -1,0 +1,16 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% \usepackage[table,xcdraw]{xcolor}
+% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+\begin{table}[!hbt]
+\centering
+\begin{tabular}{lcccc}
+\hline
+\multicolumn{1}{c}{}                                                                                        & \multicolumn{2}{c}{LEVIR-CD}                                                  & \multicolumn{2}{c}{WHU-CD}                                                    \\ \cline{2-5} 
+\multicolumn{1}{c}{\multirow{-2}{*}{Method}}                                                                & F1                                    & IoU                                   & F1                                    & IoU                                   \\ \hline
+                                                                                                            & \textbf{90.91}                        & \textbf{83.35}                        & {\color[HTML]{FE0000} \textbf{92.65}} & {\color[HTML]{FE0000} \textbf{86.31}} \\
+                                                                                                            & {\color[HTML]{FE0000} \textbf{91.52}} & {\color[HTML]{FE0000} \textbf{84.36}} & {\color[HTML]{3531FF} \textbf{92.40}} & {\color[HTML]{3531FF} \textbf{85.87}} \\
+                                                                                                            & 82.61                                 & 70.37                                 & 76.33                                 & 61.71                                 \\
+\multirow{-4}{*}{\begin{tabular}[c]{@{}l@{}}Baseline\\ Baseline+A\\ Baseline+B\\ Baseline+A+B\end{tabular}} & {\color[HTML]{3531FF} \textbf{91.37}} & {\color[HTML]{3531FF} \textbf{84.11}} & \textbf{90.27}                        & \textbf{82.27}                        \\ \hline
+\end{tabular}
+\end{table}
