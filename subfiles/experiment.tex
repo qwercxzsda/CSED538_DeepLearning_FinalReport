@@ -3,7 +3,9 @@
 \begin{document}
 
 \subsection{Quantitative Result}
-F1 score and IoU (Intersection over Union) for the changed region were measured. In the case of LEVIR-CD dataset, F1-score was 90.91 and IoU was 83.35 for baseline. \textbf{91.52/84.36} when only feature attraction was applied to baseline, 82.61/70.37 when only FDAF was applied, and 91.37/84.11 when both methods were applied. In the case of WHU-CD dataset, F1-score was 92.65 and IoU was 86.31 for baseline.  92.40/85.87 when only feature attraction was applied to baseline, 76.33/61.71 when only FDAF was applied, and 90.27/82.27 when both methods were applied.
+We perform Change Detection experiments on two public Remote Sensing Datasets, namely LEVIR-CD\cite{LEVIR-CD} and WHU-CD\cite{WHU-CD}. F1 score and IoU (Intersection over Union) for the changed region were measured. In the case of LEVIR-CD dataset, F1-score was 90.91 and IoU was 83.35 for baseline. \textbf{91.52/84.36} when only feature attraction was applied to baseline, 82.61/70.37 when only FDAF was applied, and 91.37/84.11 when both methods were applied. In the case of WHU-CD dataset, F1-score was 92.65 and IoU was 86.31 for baseline. 92.40/85.87 when only feature attraction was applied to baseline, 76.33/61.71 when only FDAF was applied, and 90.27/82.27 when both methods were applied.
+As a result, adding feature attention achieves better performance on the LEVIR-CD dataset, but  adding FDAF Network degrades performance across all datasets. Depending on the dataset, adding feature attention achieves meaningful improvements by considering temporal correlations between two temporal branches.
+
 
 \input{tables/quantitative_result.tex}
 
@@ -38,6 +40,7 @@ F1 score and IoU (Intersection over Union) for the changed region were measured.
     \label{fig:qualitative_results}
 \end{figure}
 
+
 \subsection{Experimental Details}
-One NVIDIA A6000 Ada Generation GPU was allocated and used for each experiment. As for the dataset, we cropped at 256x256 for both LEVIR-CD and WHU-CD, like baseline. In LEVIR, we used 7,120 train data and 2,048 validation data, and in WHU-CD, we used 5,952 train data and 1,488 validation data. The batch size was set to 8 during training, and Adam optimizer was used for the learning rate. In the case of LEVIR, it was learned for 120 epoch and in the case of WHU, 80 epoch, and the best validation score was recorded every epoch. 
+One NVIDIA A6000 Ada Generation GPU was allocated and used for each experiment. As for the dataset, we cropped at 256x256 for both LEVIR-CD and WHU-CD, like baseline. In LEVIR, we used 7,120 train data and 2,048 validation data, and in WHU-CD, we used 5,952 train data and 1,488 validation data. The batch size was set to 8 during training. We optimize the networks with the BCE loss using the AdamW optimizer, while keeping diffusion model freezed. We use the initial learning rate 1e-5,  decaying it linearly to zero over end of epochs. In the case of LEVIR, our model was learned for 120 epoch and in the case of WHU, 80 epoch, and the best validation score was recorded every epoch. 
 \end{document}
