@@ -2,7 +2,8 @@
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
 
-\textbf{Hello world!}
-Hello, here is some text without a meaning...\cite{shi2020graphaf}
+\textbf{}
+Although DDPM-cd demonstrates sufficiently good performance, it does not leverage the characteristics of bi-temporal images. Specifically, it involves feeding the differences between the features obtained from diffusion model into the Change Detection Network (Classifier) without considering the differences in the noise of the two images. Therefore, there could be an attempt to first eliminate these style differences, namely noise.
 
+One method proposed by ChangerEx is the Flow dual-alignment fusion.\cite{fang2023changerex} This technique involves generating two sets of features obtained from diffusion model and subsequently applying convolution based network, Flownet, and warping before feeding them into the Change Detection Network. By doing so, it applies image warping, which reduces errors between the two images. This process aims to diminish the style differences between the two images, thereby providing the classifier with better features.
 \end{document}
