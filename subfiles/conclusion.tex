@@ -2,6 +2,7 @@
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
 
-Our first method, adding feature attention achieves better performance on the LEVIR-CD dataset. Our second method, adding FDAF Network degrades performance across all datasets. Depending on the dataset, adding feature attention achieves meaningful improvements by considering temporal correlations between two temporal branches.
+In this paper, we proposed a novel change detection method based on feature manipulation. Previous approaches used the diffusion model as a feature extractor to extract features from images and detect changed regions. We thought feature maps could be useful through two additional network, and we proposed two methods: feature attention and FDAF. 
+In the case of feature attention, we found that the idea of learning the correlation of the two feature maps, was a reasonable approach and recorded SOTA performance on some datasets. But in the case of FDAF, we found that there was a problem with the current proposed method due to performance degradation. When utilizing FDAF, it was anticipated that it would remove environmental noise caused by the conditions under which the two images were captured. However, while employing FDAF, there is a possibility of not just removing environmental noise but also target feature differences between the images. This could potentially result in degradation. We would like to improve this in the future, and we think our research can be applied in various forms in change detection fields later.
 
 \end{document}
