@@ -41,20 +41,8 @@
 \maketitle
 
 \begin{abstract}
-  The report for the final project should be submitted by the \textbf{21st of Dec, 2023, 11:59 AM}.
-  The template should follow the current Latex file (originally from NeurIPS 2023 template), and you should not change the format, e.g., font size, margin size, or any other formats that affect the length of your report.
-  The maximum length of your report is \textbf{3 pages}, and additional pages are allowed only for references.
-  Also, the report should be written in \textbf{English}.
-  Please change the title (DeepLearning - Final Report) to your own topic/title.
-  Your report should contain the following contents.
-  \textbf{1)} Abstract,
-  \textbf{2)} Introduction,
-  \textbf{3)} Method,
-  \textbf{4)} Experiment, and
-  \textbf{5)} Conclusion.
-  \textbf{The \textit{novelty} and \textit{contribution} of the proposed project should be well argued and supported by experiments. The report should also be clearly written with valid results.}
-  
-
+  Change Detection is a classic task of computer vision that receives a bi-temporal image pair as an input and separates the semantically changed and unchanged regions of it. Diffusion Model is not only used in Image Synthesis, but also used as a feature extractor and has been applied to various downstream tasks. Using this, a feature map is extracted from the pre-trained diffusion model from the large-scale data set and changes are detected through the additional network in previous. 
+  On the one hand, the current Diffusion-based Change Detection approach focuses only on how to extract a good feature map with the Diffusion Model, and obtains and uses difference without further adjustment to the created feature map. Our method focuses on manipulating the feature map extracted from the Diffusion Model to be more semantically useful, and for this, we propose two methods: Feature Attention and FDAF. Our model with Feature Attention achieved state-of-the-art F1 score(91.52) and IoU(84.36) on LEVIR-CD dataset. All our codes are available at \href{https://github.com/choidaedae/POSTECH-CSED538/}{https://github.com/choidaedae/POSTECH-CSED538/}.
 \end{abstract}
 
 
